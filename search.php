@@ -5,11 +5,21 @@
 
 <body>
 <form action="result.php" method="POST">
-<center><h3>Search Database</h3></center>
-<center><table>
+<left><h3>Search Database</h3></left>
+<left><table>
 <tr>
-	<td>Search</td>
-	<td><input type="text" name="LastName" size="50"></td>
+	<td>Search author last name</td>
+	<td><input type="text" name="LastName" size="20"></td>
+	<td><input type="submit" name="submit"></td>
+</tr>
+<tr>
+	<td>Search book title</td>
+	<td><input type="text" name="Title" size="20"></td>
+	<td><input type="submit" name="submit"></td>
+</tr>
+<tr>
+	<td>Search book genre</td>
+	<td><input type="text" name="Genre" size="20"></td>
 	<td><input type="submit" name="submit"></td>
 </tr>
 </table></center>

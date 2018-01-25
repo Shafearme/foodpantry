@@ -10,22 +10,59 @@ if (mysqli_connect_errno())
 
 
 if($_REQUEST['submit']){
-$LastName = $_POST['LastName'];
+    $LastName = $_POST['LastName'];
 
-echo "You searched for '$LastName'<br>";
+    echo "You searched for '$LastName'<br>";
 
-if(empty($LastName)){
-	$make = '<h4>You must type a word to search!</h4>';
-}else{
-	$make = '<h4>No match found!</h4>';
-	$sele = "SELECT * FROM `books` WHERE `LastName` LIKE '%$LastName%'";
-	
-	echo "( <font size=1>". $sele . ")</font>";
-	$result = mysqli_query($connection, $sele);//////////////
-
-	}
-
+    if(empty($LastName)){
+	   $make = '<h4>You must type a word to search!</h4>';
+    }else{
+	   $make = '<h4>No match found!</h4>';
+	   $sele = "SELECT * FROM `books` WHERE `LastName` LIKE '%$LastName%'";
+	   echo "( <font size=1>". $sele . ")</font>";
+	   $result = mysqli_query($connection, $sele);
+	   }
 }
+///
+if($_REQUEST['submit']){
+    $Title = $_POST['Title'];
+
+    echo "You searched for '$Title'<br>";
+
+    if(empty($Title)){
+	   $make = '<h4>You must type a word to search!</h4>';
+    }else{
+	   $make = '<h4>No match found!</h4>';
+	   $sele = "SELECT * FROM `books` WHERE `Title` LIKE '%$Title%'";
+	   echo "( <font size=1>". $sele . ")</font>";
+	   $result = mysqli_query($connection, $sele);
+	   }
+}
+///
+if($_REQUEST['submit']){
+    $Genre = $_POST['Genre'];
+
+    echo "You searched for '$Genre'<br>";
+
+    if(empty($Genre)){
+	   $make = '<h4>You must type a word to search!</h4>';
+    }else{
+	   $make = '<h4>No match found!</h4>';
+	   $sele = "SELECT * FROM `books` WHERE `Genre` LIKE '%$Genre%'";
+	   echo "( <font size=1>". $sele . ")</font>";
+	   $result = mysqli_query($connection, $sele);
+	   }
+}
+
+
+
+
+
+
+
+
+
+
 if(!mysqli_error){
   while($row = mysqli_fetch_assoc($result)){
     // you can also use fetch_array or fetch_object if it is more practicable for you
