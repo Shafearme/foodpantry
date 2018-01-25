@@ -9,10 +9,10 @@ if (mysqli_connect_errno())
   }
 
 
-if($_REQUEST['submit']){
+if($_REQUEST['submit'] && isset($_POST['LastName'])){
     $LastName = $_POST['LastName'];
 
-    echo "You searched for '$LastName'<br>";
+    //echo "You searched for '$LastName'<br>";
 
     if(empty($LastName)){
 	   $make = '<h4>You must type a word to search!</h4>';
@@ -24,10 +24,10 @@ if($_REQUEST['submit']){
 	   }
 }
 ///
-if($_REQUEST['submit']){
+if($_REQUEST['submit'] && isset($_POST['Title'])){
     $Title = $_POST['Title'];
 
-    echo "You searched for '$Title'<br>";
+    //echo "You searched for '$Title'<br>";
 
     if(empty($Title)){
 	   $make = '<h4>You must type a word to search!</h4>';
@@ -39,10 +39,10 @@ if($_REQUEST['submit']){
 	   }
 }
 ///
-if($_REQUEST['submit']){
+if($_REQUEST['submit'] && isset($_POST['Genre'])){	
     $Genre = $_POST['Genre'];
 
-    echo "You searched for '$Genre'<br>";
+    //echo "You searched for '$Genre'<br>";
 
     if(empty($Genre)){
 	   $make = '<h4>You must type a word to search!</h4>';
